@@ -5,9 +5,12 @@ app.component('product-display',{
             required: true
         }
     },
+    
     template:
+    
     /*html*/
-    `<div class="product-display">
+    `
+    <div class="product-display">
             <div class="product-container">
                 <div class="product-image">
                     <img  v-bind:src="image">
@@ -37,8 +40,12 @@ app.component('product-display',{
                     @click='removeFromCart'
                     >Remove from cart</button>
                 </div>
+                <product-details :details="details"></product-details>
             </div>
+            <review-list v-if="reviews.length" :reviews="reviews" />
+            <review-form @review-submitted="addReview" />
         </div>`,
+        
         data() {
             return {
                 product: 'Shoes',
@@ -55,8 +62,8 @@ app.component('product-display',{
                 cart: 0,
                 isOnSale:false,
                 activeClass: true,
-                premium:true
-                
+                premium:true,
+                reviews:[]
     
             }
         },
@@ -96,6 +103,12 @@ app.component('product-display',{
             },
             removeFromCart() {
                 this.$emit('remove-from-cart')
+            },
+            addReview(review) {
+                this.reviews.push(review)
+                console.log(review)
             }
         }
-})
+
+}
+)
