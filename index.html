@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+     
 </head>
 
 <body>
@@ -15,7 +16,14 @@
         <div class="nav-bar"></div>
 
         <div class="cart">Cart({{ cart }})</div>
+        <div>
+        <product-display :premium="premium"></product-display>
+        <product-details :details="details"></product-details>
+        </div>
+        
+        <!--
 
+        
         <div class="product-display">
             <div class="product-container">
                 <div class="product-image">
@@ -34,12 +42,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
+
 
     <!-- Import Js -->
     <script src="./main.js "></script>
+    <!-- Import Components.js -->
+    <script src="./components/ProductDisplay.js"></script>
+
+    <script src="./components/ProductDetails.js"></script>
     <script>
         const mountedApp = app.mount('#app')
+        
     </script>
 </body>
 

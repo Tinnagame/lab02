@@ -13,7 +13,8 @@ const app = Vue.createApp({
             ],
             selectedVariant:0,
             cart: 0,
-            isOnSale:false
+            isOnSale:false,
+        
 
         }
     },
@@ -33,7 +34,7 @@ const app = Vue.createApp({
             } else {
                 return ' '
             }
-        }
+        },
     },
     methods: {
         addToCart() {
